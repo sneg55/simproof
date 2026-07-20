@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+.cache/
+.simproof/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+.harness/
+__pycache__/
+*.py[cod]
+/data/
+/packages/persistence/data/
+
+# Local-only working material kept out of the public repository
+.claude/
+submission/
+dogfood-output/
+product-critic-output/
+docs/superpowers/

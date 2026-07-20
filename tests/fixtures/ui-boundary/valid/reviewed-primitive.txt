@@ -1,0 +1,19 @@
+import * as RadixDialog from '@radix-ui/react-dialog'
+import { Dialog as BaseDialog } from '@base-ui/react/dialog'
+import { Dialog as HeadlessDialog } from '@headlessui/react'
+
+export const ReviewedPrimitive = () => (
+  <RadixDialog.Root>
+    <RadixDialog.Trigger asChild>
+      <button type="button">Open</button>
+    </RadixDialog.Trigger>
+    <RadixDialog.Content>
+      <label>
+        Name
+        <input />
+      </label>
+    </RadixDialog.Content>
+  </RadixDialog.Root>
+)
+
+export { BaseDialog, HeadlessDialog }

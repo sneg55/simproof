@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1",
+  "groups": [
+    {
+      "package": "observability",
+      "files": [
+        "src/correlation-context.test.ts",
+        "src/errors.test.ts",
+        "src/local-file-store.test.ts",
+        "src/logger.test.ts",
+        "src/metrics.test.ts",
+        "src/redaction.test.ts",
+        "src/signals.test.ts",
+        "src/telemetry.test.ts"
+      ]
+    },
+    {
+      "package": "orchestrator",
+      "files": [
+        "src/operations/diagnostics-cli.test.ts",
+        "src/operations/diagnostics-process.test.ts",
+        "src/operations/diagnostics-redaction.test.ts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1",
+  "groups": [
+    {
+      "package": "orchestrator",
+      "files": [
+        "src/application.integration.test.ts",
+        "src/generation/persistence-journal.integration.test.ts",
+        "src/generation/pipeline.test.ts",
+        "src/generation/trusted-runtime-adapters.test.ts"
+      ]
+    },
+    {
+      "package": "persistence",
+      "files": [
+        "src/generation-state-invariants.test.ts",
+        "src/generation-terminal-consistency.test.ts",
+        "src/lifecycle.test.ts",
+        "src/restore-history-lineage.test.ts"
+      ]
+    },
+    {
+      "package": "runner",
+      "files": ["src/runner-service.test.ts"]
+    },
+    {
+      "package": "verifier",
+      "files": ["src/report-builder.test.ts", "src/report-validity.test.ts"]
+    }
+  ]
+}

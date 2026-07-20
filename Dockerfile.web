@@ -1,0 +1,20 @@
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d AS build
+
+WORKDIR /source
+RUN npm install --global pnpm@11.13.1
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json tsconfig.json ./
+COPY apps ./apps
+COPY packages ./packages
+RUN pnpm install --frozen-lockfile --filter @simproof/web...
+RUN pnpm exec tsc --build packages/contracts/tsconfig.production.json --pretty false
+RUN pnpm --filter @simproof/web build
+
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d
+
+ENV NODE_ENV=production
+WORKDIR /app
+COPY --from=build --chown=65532:65532 /source/apps/web/dist /app/public
+COPY --chown=65532:65532 deployment/web-server.mjs /app/deployment/web-server.mjs
+USER 65532:65532
+EXPOSE 8080
+CMD ["node", "/app/deployment/web-server.mjs"]

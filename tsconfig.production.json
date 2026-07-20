@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "references": [
+    { "path": "./apps/orchestrator/tsconfig.production.json" },
+    { "path": "./apps/runner/tsconfig.production.json" },
+    { "path": "./packages/contracts/tsconfig.production.json" },
+    { "path": "./packages/domain-pack-sdk/tsconfig.production.json" },
+    { "path": "./packages/observability/tsconfig.production.json" },
+    { "path": "./packages/persistence/tsconfig.production.json" },
+    { "path": "./packages/providers/tsconfig.production.json" },
+    { "path": "./packages/sim-runtime/tsconfig.production.json" },
+    { "path": "./packages/verifier/tsconfig.production.json" }
+  ]
+}

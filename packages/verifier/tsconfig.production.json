@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": false,
+    "tsBuildInfoFile": "dist/.tsbuildinfo-production"
+  },
+  "exclude": ["src/**/*.test.ts", "src/**/*.integration.test.ts", "src/**/*.test-support.ts"],
+  "references": [
+    { "path": "../contracts/tsconfig.production.json" },
+    { "path": "../domain-pack-sdk/tsconfig.production.json" },
+    { "path": "../sim-runtime/tsconfig.production.json" }
+  ]
+}

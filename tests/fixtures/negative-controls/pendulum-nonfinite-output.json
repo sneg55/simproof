@@ -1,0 +1,5 @@
+{
+  "domain": "pendulum",
+  "units": { "length": "m", "amplitude": "deg", "period": "s" },
+  "observations": [{ "input": { "lengthM": 1, "amplitudeDeg": 5 }, "periodS": "NaN" }]
+}

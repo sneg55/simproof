@@ -1,0 +1,5 @@
+{
+  "id": "projectile-coarse-euler",
+  "implementation": "explicit-euler",
+  "stepSeconds": 0.3
+}

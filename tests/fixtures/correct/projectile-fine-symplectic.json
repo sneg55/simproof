@@ -1,0 +1,5 @@
+{
+  "id": "projectile-fine-symplectic",
+  "implementation": "symplectic",
+  "stepSeconds": 0.005
+}

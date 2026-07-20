@@ -1,0 +1,71 @@
+name: Bug report
+description: Report reproducible product behavior that is not a security vulnerability.
+title: "bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include vulnerability details, credentials, student data, prompts,
+        generated content, provider responses, raw diagnostics, or unredacted logs.
+        Use the private path in SECURITY.md for security concerns.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: State the observable problem in one sentence.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Teacher web experience
+        - Orchestrator or API
+        - Persistence, backup, or export
+        - Trusted verifier or domain pack
+        - Runner or launcher (non-security behavior)
+        - Build or repository tooling
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Give the smallest safe sequence that reproduces the behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed behavior
+      description: Describe the expected result and what occurred instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Source revision or release
+      description: Provide a commit or release identifier, not a local path.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Supported environment
+      description: Include architecture, browser, and deployment mode without secrets or paths.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Include stable error IDs or bounded non-sensitive output only.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I confirmed this report contains no vulnerability details or sensitive data.
+          required: true
+        - label: I searched for an existing report of the same behavior.
+          required: true

@@ -1,0 +1,8 @@
+{
+  "name": "@simproof/diagnostics",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node ../../scripts/run-test-gate.mjs diagnostics"
+  }
+}

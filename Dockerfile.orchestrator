@@ -1,0 +1,35 @@
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d AS build
+
+WORKDIR /source
+RUN npm install --global pnpm@11.13.1
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json tsconfig.production.json ./
+COPY apps ./apps
+COPY packages ./packages
+RUN pnpm install --frozen-lockfile --filter @simproof/orchestrator...
+RUN pnpm exec tsc --build apps/orchestrator/tsconfig.production.json --pretty false
+RUN pnpm --filter @simproof/orchestrator deploy --legacy --prod /runtime \
+    && find /runtime -type f \( -name '*.ts' -o -name '*.ts.map' -o -name '*.test.js' \) -delete
+
+FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d
+
+ENV NODE_ENV=production
+WORKDIR /app
+# The bundled Codex CLI is a native binary that verifies TLS against the system
+# CA store when calling the model API. node:*-slim ships without it, so install
+# ca-certificates (Node itself uses its own bundled roots and does not need this).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /var/lib/simproof/current /var/lib/simproof/backups \
+      /var/lib/simproof/restores /var/lib/simproof/rollbacks /var/log/simproof \
+    && chown -R 65532:65532 /var/lib/simproof /var/log/simproof
+COPY --from=build --chown=65532:65532 /runtime /app
+COPY --chown=65532:65532 deployment/codex-roots.mjs /app/deployment/codex-roots.mjs
+COPY --chown=65532:65532 deployment/deployment-check.mjs /app/deployment/deployment-check.mjs
+COPY --chown=65532:65532 deployment/operations.mjs /app/deployment/operations.mjs
+COPY --chown=65532:65532 deployment/recovery.mjs /app/deployment/recovery.mjs
+COPY --chown=65532:65532 deployment/runtime-import.mjs /app/deployment/runtime-import.mjs
+USER 65532:65532
+EXPOSE 3000
+ENTRYPOINT ["node", "/app/deployment/operations.mjs"]
+CMD ["serve"]

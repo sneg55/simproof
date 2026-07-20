@@ -1,0 +1,12 @@
+{
+  "id": "projectile-bad-units",
+  "implementation": "analytic",
+  "units": {
+    "initialSpeed": "mph",
+    "launchAngle": "rad",
+    "range": "ft",
+    "height": "ft",
+    "time": "s",
+    "speed": "mph"
+  }
+}

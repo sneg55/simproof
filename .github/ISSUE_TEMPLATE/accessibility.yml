@@ -1,0 +1,55 @@
+name: Accessibility issue
+description: Report a barrier in a teacher workflow or simulation representation.
+title: "accessibility: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include personal health information, student data, account data, or
+        vulnerability details. Describe assistive technology only as needed to reproduce.
+  - type: input
+    id: workflow
+    attributes:
+      label: Workflow and route
+      description: Name the teacher task and page or component.
+    validations:
+      required: true
+  - type: input
+    id: criterion
+    attributes:
+      label: WCAG 2.2 AA criterion or barrier class
+      description: Examples include keyboard, focus, name/role/value, status, contrast, reflow, or motion.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include browser, input method, assistive technology, and safe steps.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: User impact
+      description: Explain which task cannot be completed or understood.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected accessible behavior
+      description: Include keyboard, focus, announcement, data-equivalence, and reduced-motion expectations as applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Share a minimal screenshot or accessibility-tree excerpt only if it contains no private data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Scope checks
+      options:
+        - label: I checked whether the equivalent visible data or text has the same barrier.
+        - label: This report contains no vulnerability details or sensitive data.
+          required: true

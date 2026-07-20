@@ -1,0 +1,33 @@
+SimProof
+Copyright 2026 SimProof contributors
+
+This product includes software and repository documentation licensed under the
+Apache License, Version 2.0. See LICENSE.
+
+Bundled educational examples
+----------------------------
+
+The SimProof-authored bundled projectile-motion and simple-pendulum examples,
+including their teacher-facing example descriptions and accessible example data, are
+licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Attribute
+them as “SimProof contributors,” identify modifications, and include a reference to
+LICENSE-CONTENT or https://creativecommons.org/licenses/by/4.0/.
+
+This content license applies only where a bundled item or its accompanying metadata
+identifies it as SimProof bundled educational content. It does not relicense source
+code, third-party material, dependencies, or user-generated artifacts. Any additional
+third-party attribution supplied with an item must be retained.
+
+Generated artifacts
+-------------------
+
+Teacher-directed generated artifacts retain the deployer/user ownership posture and
+the configurable export-license metadata recorded with their provenance. The selected
+metadata describes an intended export posture; it is not a warranty or proof of
+copyright ownership, copyrightability, provider-term compatibility, or authority to
+license the artifact. Storage, verification, or export by SimProof does not transfer
+ownership to the project or apply Apache-2.0 or CC BY 4.0 automatically.
+
+Contributors and operators are responsible for confirming that they have the rights
+needed for material they contribute, prompt with, bundle, generate, or distribute.
+See docs/decisions/0005-licensing.md.

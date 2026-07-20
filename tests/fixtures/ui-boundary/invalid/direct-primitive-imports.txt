@@ -1,0 +1,6 @@
+import * as RadixDialog from '@radix-ui/react-dialog'
+import { Dialog as RadixPackageDialog } from 'radix-ui'
+import { Dialog as BaseDialog } from '@base-ui/react/dialog'
+import { Dialog as HeadlessDialog } from '@headlessui/react'
+
+export { BaseDialog, HeadlessDialog, RadixDialog, RadixPackageDialog }

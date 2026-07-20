@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "tsBuildInfoFile": "node_modules/.cache/tsconfig.e2e.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": ["playwright.config.ts", "tests/web/**/*.ts"]
+}

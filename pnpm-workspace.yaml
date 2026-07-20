@@ -1,0 +1,10 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - 'tests/*'
+
+allowBuilds:
+  unrs-resolver: true
+
+engineStrict: true
+nodeVersion: 24.15.0

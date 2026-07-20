@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1",
+  "groups": [
+    {
+      "package": "deployment",
+      "files": [
+        "src/compose-policy.test.ts",
+        "src/application-image-sqlite.test.ts",
+        "src/codex-roots.test.ts",
+        "src/full-stack-smoke.test.ts",
+        "src/image-policy.test.ts",
+        "src/operations.test.ts",
+        "src/prepare-deployment.test.ts",
+        "src/web-server.test.ts"
+      ]
+    },
+    {
+      "package": "orchestrator",
+      "files": ["src/application.integration.test.ts"]
+    },
+    {
+      "package": "persistence",
+      "files": [
+        "src/backup.test.ts",
+        "src/backup-hardening.test.ts",
+        "src/cleanup-consistency.test.ts",
+        "src/migrations.test.ts",
+        "src/restore-history-lineage.test.ts"
+      ]
+    },
+    {
+      "package": "runner",
+      "files": ["src/security.integration.test.ts"]
+    }
+  ]
+}

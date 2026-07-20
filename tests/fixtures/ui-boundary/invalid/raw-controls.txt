@@ -1,0 +1,13 @@
+export const RawControls = () => (
+  <section>
+    <button type="button">Save</button>
+    <input aria-label="Title" />
+    <select aria-label="Subject"><option>Physics</option></select>
+    <textarea aria-label="Notes" />
+    <dialog open>Details</dialog>
+    <table><tbody><tr><td>Value</td></tr></tbody></table>
+    <label>Visible label</label>
+    <progress aria-label="Generation progress" value="1" max="2" />
+    <hr />
+  </section>
+)

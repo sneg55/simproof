@@ -1,0 +1,69 @@
+name: Domain-pack proposal
+description: Propose a bounded, application-owned scientific domain pack.
+title: "domain pack: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A prompt, renderer, schema stub, or runtime plugin cannot make a domain
+        supported. Read docs/domains/authoring.md before proposing a pack.
+  - type: input
+    id: domain
+    attributes:
+      label: Domain and instructional claim
+      description: Name the domain and the exact bounded claim the verifier would support.
+    validations:
+      required: true
+  - type: textarea
+    id: applicability
+    attributes:
+      label: Applicability and exclusions
+      description: State parameters, units, closed/open bounds, singularities, assumptions, and unsupported cases.
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Independent reference and citations
+      description: Identify the trusted reference, derivation, constants, unit authority, and stable citations.
+    validations:
+      required: true
+  - type: textarea
+    id: tolerances
+    attributes:
+      label: Numerical method and tolerance calibration
+      description: Quantify approximation, roundoff, discretization, false-reject, and false-accept budgets.
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Controls and properties
+      description: List positive, realistic negative, property, boundary, singularity, and parity controls.
+    validations:
+      required: true
+  - type: textarea
+    id: presentation
+    attributes:
+      label: Accessible representation
+      description: Describe normalized scene/data equivalence, keyboard operation, announcements, and reduced motion.
+    validations:
+      required: true
+  - type: textarea
+    id: governance
+    attributes:
+      label: Review, versioning, and stale evidence
+      description: Identify proposed reviewers without overstating credentials, version impact, fingerprints, and stale-report behavior.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights and trust boundary
+      options:
+        - label: I have identified third-party material and licensing/attribution needs.
+          required: true
+        - label: The proposed verifier truth is application-owned and does not rely on generated or renderer equations.
+          required: true
+        - label: This proposal contains no vulnerability details or sensitive data.
+          required: true

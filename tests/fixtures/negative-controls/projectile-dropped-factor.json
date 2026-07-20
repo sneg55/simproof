@@ -1,0 +1,4 @@
+{
+  "id": "projectile-dropped-factor",
+  "implementation": "dropped-factor"
+}

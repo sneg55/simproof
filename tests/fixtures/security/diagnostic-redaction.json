@@ -1,0 +1,12 @@
+{
+  "apiKey": "sk-proj-SIMPROOF-DO-NOT-ESCAPE-API-KEY",
+  "accessToken": "SIMPROOF-DO-NOT-ESCAPE-ACCESS-TOKEN",
+  "password": "SIMPROOF-DO-NOT-ESCAPE-PASSWORD",
+  "cookie": "__Host-simproof_session=SIMPROOF-DO-NOT-ESCAPE-COOKIE",
+  "prompt": "SIMPROOF-DO-NOT-ESCAPE-TEACHER-PROMPT",
+  "generatedContent": "SIMPROOF-DO-NOT-ESCAPE-GENERATED-CONTENT",
+  "providerResponse": "SIMPROOF-DO-NOT-ESCAPE-PROVIDER-RESPONSE",
+  "reasoning": "SIMPROOF-DO-NOT-ESCAPE-REASONING",
+  "databasePath": "/SIMPROOF-DO-NOT-ESCAPE/database.sqlite",
+  "artifactPath": "/SIMPROOF-DO-NOT-ESCAPE/artifacts"
+}

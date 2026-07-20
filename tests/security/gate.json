@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1",
+  "groups": [
+    {
+      "package": "orchestrator",
+      "files": [
+        "src/auth/cookie-policy.test.ts",
+        "src/auth/service.test.ts",
+        "src/config/privacy-inventory.test.ts",
+        "src/http/boundary.test.ts",
+        "src/http/strict-json.test.ts",
+        "src/operations/diagnostics-redaction.test.ts"
+      ]
+    },
+    {
+      "package": "observability",
+      "files": ["src/redaction.test.ts"]
+    },
+    {
+      "package": "persistence",
+      "files": [
+        "src/auth-privacy-record-validator.test.ts",
+        "src/backup-hardening.test.ts",
+        "src/persistence-hardening.test.ts",
+        "src/persistence-security.test.ts"
+      ]
+    },
+    {
+      "package": "providers",
+      "files": [
+        "src/codex-artifacts.test.ts",
+        "src/codex-code-generator.test.ts",
+        "src/codex-state.test.ts",
+        "src/openai-concept-compiler.test.ts"
+      ]
+    },
+    {
+      "package": "runner",
+      "files": [
+        "src/docker-launcher.test.ts",
+        "src/security.integration.test.ts",
+        "src/source-policy.test.ts"
+      ]
+    }
+  ]
+}

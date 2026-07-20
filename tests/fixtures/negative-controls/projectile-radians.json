@@ -1,0 +1,5 @@
+{
+  "id": "projectile-radians",
+  "implementation": "radians-bug",
+  "stepSeconds": 0.02
+}

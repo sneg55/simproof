@@ -1,0 +1,25 @@
+{
+  "name": "@simproof/runner",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "start:launcher": "node dist/launcher-start.js",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --build --pretty false"
+  },
+  "dependencies": {
+    "@simproof/contracts": "workspace:*",
+    "@simproof/verifier": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "4.1.10"
+  }
+}

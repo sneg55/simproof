@@ -1,0 +1,9 @@
+{
+  "domain": "pendulum",
+  "units": { "length": "m", "amplitude": "deg", "period": "s" },
+  "observations": [
+    { "input": { "lengthM": 0.49, "amplitudeDeg": 5 }, "periodS": 1.403666 },
+    { "input": { "lengthM": 2.01, "amplitudeDeg": 5 }, "periodS": 2.84409 },
+    { "input": { "lengthM": 1, "amplitudeDeg": 15.01 }, "periodS": 2.0060666807106475 }
+  ]
+}

@@ -1,0 +1,68 @@
+name: Deployment problem
+description: Report a problem in the documented supported Docker Compose profile.
+title: "deployment: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste `.env`, credentials, cookies, Docker socket details, generated
+        content, provider responses, databases, backups, raw logs, or vulnerability
+        details. Use SECURITY.md for a suspected security issue.
+  - type: input
+    id: identity
+    attributes:
+      label: Release, source, and image identities
+      description: Include safe version/digest identifiers without registry credentials.
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Operation
+      options:
+        - Prepare or configuration check
+        - Build
+        - Fresh migration or bootstrap
+        - Startup or readiness
+        - Seed-library use
+        - Generation
+        - Backup or restore
+        - Upgrade or rollback
+        - Diagnostics or shutdown
+    validations:
+      required: true
+  - type: textarea
+    id: platform
+    attributes:
+      label: Supported platform
+      description: Include Linux distribution, amd64/arm64, Docker Engine and Compose versions, and loopback/network mode.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Give commands from the documented runbook with all secrets and paths redacted.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and observed outcome
+      description: Include health/readiness classification and stable error IDs, not raw container output.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reviewed diagnostic evidence
+      description: Summarize a locally reviewed redacted support bundle; do not attach protected data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I used the documented supported topology without weakening runner isolation or socket authority.
+          required: true
+        - label: I removed all secrets, private paths, user content, and vulnerability details.
+          required: true

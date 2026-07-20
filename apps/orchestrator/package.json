@@ -1,0 +1,23 @@
+{
+  "name": "@simproof/orchestrator",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node dist/start.js",
+    "test": "vitest run",
+    "typecheck": "tsc --build --pretty false"
+  },
+  "dependencies": {
+    "@simproof/contracts": "workspace:*",
+    "@simproof/observability": "workspace:*",
+    "@simproof/persistence": "workspace:*",
+    "@simproof/providers": "workspace:*",
+    "@simproof/sim-runtime": "workspace:*",
+    "@simproof/verifier": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "vitest": "4.1.10"
+  }
+}

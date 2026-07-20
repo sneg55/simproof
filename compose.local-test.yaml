@@ -1,0 +1,5 @@
+services:
+  orchestrator:
+    environment:
+      - NODE_ENV=test
+      - SIMPROOF_LOCAL_AUTH_BYPASS=true

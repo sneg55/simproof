@@ -1,0 +1,11 @@
+export const SemanticContent = () => (
+  <main>
+    <article>
+      <h1>Projectile motion</h1>
+      <section aria-labelledby="plot-title">
+        <h2 id="plot-title">Trajectory</h2>
+        <svg role="img" aria-label="Projectile trajectory" />
+      </section>
+    </article>
+  </main>
+)

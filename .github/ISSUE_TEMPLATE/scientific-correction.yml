@@ -1,0 +1,64 @@
+name: Scientific correction
+description: Report a possible error in a trusted claim, equation, policy, tolerance, or citation.
+title: "science: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the issue could enable a trust-boundary bypass or unsafe generated content,
+        stop and use the private path in SECURITY.md.
+  - type: input
+    id: identity
+    attributes:
+      label: Domain pack and policy identity
+      description: Include pack/policy versions and content fingerprint when available.
+    validations:
+      required: true
+  - type: input
+    id: checks
+    attributes:
+      label: Affected claim, check, or finding IDs
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Proposed scientific correction
+      description: State what is wrong, the corrected bounded claim, and its assumptions.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Independent evidence and citations
+      description: Provide derivation, dimensional analysis, reference data, and stable primary sources.
+    validations:
+      required: true
+  - type: textarea
+    id: calibration
+    attributes:
+      label: Tolerance and numerical impact
+      description: Quantify error budgets and identify false-reject/false-accept consequences.
+    validations:
+      required: true
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression controls
+      description: Describe the positive, negative, boundary, property, and parity evidence that should change.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Version and stale-report impact
+      description: Explain policy/pack version review and which retained reports become stale.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Public-report check
+      options:
+        - label: This report contains no vulnerability details, credentials, or private data.
+          required: true

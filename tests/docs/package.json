@@ -1,0 +1,16 @@
+{
+  "name": "@simproof/docs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --build --pretty false"
+  },
+  "devDependencies": {
+    "@simproof/domain-pack-conformance": "workspace:*",
+    "@simproof/domain-pack-sdk": "workspace:*",
+    "@simproof/verifier": "workspace:*",
+    "vitest": "4.1.10"
+  }
+}

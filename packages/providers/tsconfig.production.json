@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": false,
+    "tsBuildInfoFile": "dist/.tsbuildinfo-production"
+  },
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/*.integration.test.ts",
+    "src/**/*.test-support.ts",
+    "src/**/test-*.ts"
+  ],
+  "references": [{ "path": "../contracts/tsconfig.production.json" }]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@simproof/deployment",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node ../../scripts/run-test-gate.mjs deployment"
+  },
+  "devDependencies": {
+    "@simproof/persistence": "workspace:*",
+    "vitest": "4.1.10",
+    "yaml": "2.9.0"
+  }
+}

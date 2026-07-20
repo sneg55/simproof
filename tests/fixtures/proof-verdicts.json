@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "pendulum-correct",
+      "domain": "pendulum",
+      "fixture": "correct/pendulum-correct.json",
+      "expected": "verified",
+      "pythonControl": "pendulum-correct"
+    },
+    {
+      "id": "projectile-analytic",
+      "domain": "projectile",
+      "fixture": "correct/projectile-analytic.json",
+      "expected": "verified"
+    },
+    {
+      "id": "projectile-fine-symplectic",
+      "domain": "projectile",
+      "fixture": "correct/projectile-fine-symplectic.json",
+      "expected": "verified",
+      "pythonControl": "projectile-correct"
+    },
+    {
+      "id": "pendulum-bad-units",
+      "domain": "pendulum",
+      "fixture": "negative-controls/pendulum-bad-units.json",
+      "expected": "rejected"
+    },
+    {
+      "id": "pendulum-inverted-ratio",
+      "domain": "pendulum",
+      "fixture": "negative-controls/pendulum-inverted-ratio.json",
+      "expected": "rejected",
+      "pythonControl": "pendulum-inverted"
+    },
+    {
+      "id": "pendulum-nonfinite-output",
+      "domain": "pendulum",
+      "fixture": "negative-controls/pendulum-nonfinite-output.json",
+      "expected": "rejected"
+    },
+    {
+      "id": "pendulum-out-of-domain",
+      "domain": "pendulum",
+      "fixture": "negative-controls/pendulum-out-of-domain.json",
+      "expected": "inapplicable"
+    },
+    {
+      "id": "projectile-bad-output",
+      "domain": "projectile",
+      "fixture": "negative-controls/projectile-bad-output.json",
+      "expected": "rejected"
+    },
+    {
+      "id": "projectile-bad-units",
+      "domain": "projectile",
+      "fixture": "negative-controls/projectile-bad-units.json",
+      "expected": "rejected"
+    },
+    {
+      "id": "projectile-coarse-euler",
+      "domain": "projectile",
+      "fixture": "negative-controls/projectile-coarse-euler.json",
+      "expected": "rejected",
+      "pythonControl": "projectile-coarse-euler"
+    },
+    {
+      "id": "projectile-dropped-factor",
+      "domain": "projectile",
+      "fixture": "negative-controls/projectile-dropped-factor.json",
+      "expected": "rejected",
+      "pythonControl": "projectile-dropped-factor"
+    },
+    {
+      "id": "projectile-radians",
+      "domain": "projectile",
+      "fixture": "negative-controls/projectile-radians.json",
+      "expected": "rejected",
+      "pythonControl": "projectile-radians-bug"
+    }
+  ]
+}

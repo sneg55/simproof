@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.e2e.json" },
+    { "path": "./apps/web" },
+    { "path": "./apps/orchestrator" },
+    { "path": "./apps/runner" },
+    { "path": "./tests/deployment" },
+    { "path": "./tests/domain-packs" },
+    { "path": "./tests/docs" },
+    { "path": "./packages/contracts" },
+    { "path": "./packages/domain-pack-sdk" },
+    { "path": "./packages/observability" },
+    { "path": "./packages/persistence" },
+    { "path": "./packages/providers" },
+    { "path": "./packages/sim-runtime" },
+    { "path": "./packages/verifier" }
+  ]
+}

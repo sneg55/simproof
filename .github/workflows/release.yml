@@ -1,0 +1,106 @@
+name: Release evidence dry run
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: Semantic version represented by the local evidence bundle
+        required: true
+        type: string
+      dry_run:
+        description: Must remain enabled; publishing requires a reviewed workflow change
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dry-run:
+    name: Build unsigned local evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CI: "true"
+      OPENAI_API_KEY: ""
+      CODEX_API_KEY: ""
+    steps:
+      - name: Require the non-publishing mode
+        shell: bash
+        run: |
+          if [[ "${{ inputs.dry_run }}" != "true" ]]; then
+            echo "This workflow is intentionally non-publishing. Keep dry_run enabled."
+            exit 1
+          fi
+
+      - name: Check out the requested source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.15.0
+          check-latest: false
+
+      - name: Enable the locked pnpm release
+        run: corepack enable
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run the authoritative repository gate
+        run: pnpm check
+
+      - name: Assert clean source identity before image build
+        shell: bash
+        run: |
+          source_revision="$(git rev-parse HEAD)"
+          source_date_epoch="$(git show -s --format=%ct HEAD)"
+          node scripts/release-source.mjs \
+            --source-revision "$source_revision" \
+            --source-date-epoch "$source_date_epoch"
+
+      - name: Build tested container images locally
+        env:
+          SIMPROOF_DOCKER_GID: "0"
+          SIMPROOF_ADMIN_BOOTSTRAP_SECRET: release-build-placeholder
+          SIMPROOF_SESSION_SECRET: release-build-placeholder
+          SIMPROOF_RUNNER_TOKEN: release-build-placeholder
+          SIMPROOF_RUNNER_IMAGE: sha256:0000000000000000000000000000000000000000000000000000000000000000
+          SIMPROOF_DOCKER_SOCKET: /var/run/docker.sock
+        run: docker compose --profile image-only build
+
+      - name: Generate deterministic unsigned evidence locally
+        env:
+          RELEASE_VERSION: ${{ inputs.release_version }}
+          RELEASE_OUTPUT: ${{ runner.temp }}/simproof-release-evidence
+        shell: bash
+        run: |
+          source_revision="$(git rev-parse HEAD)"
+          source_date_epoch="$(git show -s --format=%ct HEAD)"
+          image_args=()
+          for image in simproof-web:local simproof-orchestrator:local simproof-launcher:local simproof-runner:local; do
+            image_id="$(docker image inspect --format '{{.Id}}' "$image")"
+            if [[ ! "$image_id" =~ ^sha256:[0-9a-f]{64}$ ]]; then
+              echo "Invalid local image ID for $image"
+              exit 1
+            fi
+            image_args+=(--image "$image=$image_id")
+          done
+          node scripts/generate-release-evidence.mjs \
+            --output "$RELEASE_OUTPUT" \
+            --release-version "$RELEASE_VERSION" \
+            --source-revision "$source_revision" \
+            --source-date-epoch "$source_date_epoch" \
+            "${image_args[@]}"
+          node scripts/generate-release-evidence.mjs --verify "$RELEASE_OUTPUT"
+
+      # Deliberately no upload, attestation, signing, registry, or release-creation step.
+      # An operator must authorize and review a separate publishing workflow change.

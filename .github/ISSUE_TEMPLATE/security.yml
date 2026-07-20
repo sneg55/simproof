@@ -1,0 +1,18 @@
+name: Security report — private path only
+description: Do not disclose a vulnerability here; this entry redirects to private reporting.
+title: "Do not submit — use the private security advisory path"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Stop: do not submit a public issue
+
+        This form intentionally collects no vulnerability information. Close it without
+        submitting. Follow SECURITY.md: open the repository **Security** tab, choose
+        **Advisories**, then **Report a vulnerability**.
+  - type: markdown
+    attributes:
+      value: |
+        If private vulnerability reporting is not available, do not disclose details.
+        Ask a maintainer through an already established private channel to provide or
+        enable the private path.
