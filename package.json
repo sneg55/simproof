@@ -41,13 +41,13 @@
     "release:dry-run": "node scripts/generate-release-evidence.mjs"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.11.1",
+    "@axe-core/playwright": "4.12.1",
     "@biomejs/biome": "2.5.4",
-    "@eslint/js": "9.39.5",
-    "@playwright/test": "1.58.2",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.61.1",
     "@simproof/contracts": "workspace:*",
-    "@types/node": "24.13.3",
-    "eslint": "9.39.5",
+    "@types/node": "26.1.1",
+    "eslint": "10.7.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-import": "2.32.0",
@@ -56,7 +56,7 @@
     "eslint-plugin-sonarjs": "4.2.0",
     "fast-check": "4.9.0",
     "globals": "17.7.0",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "typescript-eslint": "8.64.0",
     "vitest": "4.1.10",
     "yaml": "2.9.0"
