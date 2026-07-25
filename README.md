@@ -1,5 +1,12 @@
 # SimProof
 
+[![License](https://img.shields.io/github/license/sneg55/simproof)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/sneg55/simproof)](https://github.com/sneg55/simproof/stargazers)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)
+![Node 24](https://img.shields.io/badge/Node%2024-5FA04E?logo=nodedotjs&logoColor=fff)
+![React](https://img.shields.io/badge/React-149ECA?logo=react&logoColor=fff)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)
+
 SimProof is a self-hosted tool for teachers. It generates an interactive STEM
 simulation from a plain-language lesson, then releases it only after an
 application-owned verifier checks the generated physics against a named, versioned
