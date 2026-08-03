@@ -15,9 +15,9 @@
     "typecheck": "tsc --build --pretty false"
   },
   "dependencies": {
-    "@openai/codex-sdk": "0.144.5",
+    "@openai/codex-sdk": "0.146.0",
     "@simproof/contracts": "workspace:*",
-    "openai": "6.47.0",
+    "openai": "7.2.0",
     "zod": "4.4.3"
   },
   "devDependencies": {
