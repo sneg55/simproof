@@ -1,4 +1,4 @@
-FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d AS build
+FROM node:26.5.1-bookworm-slim@sha256:9e6f9357d371591e32ab6f2d8a26d63bdd0d17c29eee3f4f3e7e454d9634bf73 AS build
 
 WORKDIR /source
 RUN npm install --global pnpm@11.13.1
@@ -9,7 +9,7 @@ RUN pnpm install --frozen-lockfile --filter @simproof/web...
 RUN pnpm exec tsc --build packages/contracts/tsconfig.production.json --pretty false
 RUN pnpm --filter @simproof/web build
 
-FROM node:24.15.0-bookworm-slim@sha256:4e6b70dd6cbfc88c8157ba19aa3d9f9cce6ba4703576d55459e45efcbc9c5f5d
+FROM node:26.5.1-bookworm-slim@sha256:9e6f9357d371591e32ab6f2d8a26d63bdd0d17c29eee3f4f3e7e454d9634bf73
 
 ENV NODE_ENV=production
 WORKDIR /app
