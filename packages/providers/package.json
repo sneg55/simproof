@@ -15,10 +15,10 @@
     "typecheck": "tsc --build --pretty false"
   },
   "dependencies": {
-    "@openai/codex-sdk": "0.144.5",
+    "@openai/codex-sdk": "0.153.2",
     "@simproof/contracts": "workspace:*",
-    "openai": "6.47.0",
-    "zod": "4.4.3"
+    "openai": "7.10.0",
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "vitest": "4.1.10"
