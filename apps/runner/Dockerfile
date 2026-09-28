@@ -1,4 +1,4 @@
-FROM node@sha256:d415caac2f1f77b98caaf9415c5f807e14bc8d7bdea62561ea2fef4fbd08a73c AS node-runtime
+FROM node@sha256:a723b54c35a76e947095a20a67d39585bb09c862e6b1adeb8a9f518f95e34fb0 AS node-runtime
 
 RUN mkdir -p /rootfs/usr/local/bin \
     && cp /usr/local/bin/node /rootfs/usr/local/bin/node \
